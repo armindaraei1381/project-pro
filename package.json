@@ -1,7 +1,7 @@
 {
   "name": "project-pro",
   "main": "./lib/main",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A minimal glassmorphism project dashboard with themes, templates and rich settings for Pulsar",
   "keywords": [
     "projects",
