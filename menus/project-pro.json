@@ -1,0 +1,24 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Project Pro",
+          "submenu": [
+            { "label": "Toggle Dashboard", "command": "project-pro:toggle" },
+            { "label": "New Project...", "command": "project-pro:new-project" },
+            { "label": "Add Folder...", "command": "project-pro:add-project" },
+            { "label": "Add Current Project", "command": "project-pro:add-current" },
+            { "label": "Cycle Theme", "command": "project-pro:cycle-theme" }
+          ]
+        }
+      ]
+    }
+  ],
+  "context-menu": {
+    "atom-workspace": [
+      { "label": "Toggle Project Pro", "command": "project-pro:toggle" }
+    ]
+  }
+}

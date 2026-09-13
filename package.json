@@ -14,7 +14,7 @@
     "productivity"
   ],
   "repository": "https://github.com/armindaraei1381/project-pro",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Armin Daraei <armindaraei1381@users.noreply.github.com>",
   "license": "MIT",
   "engines": {
     "atom": ">=1.4.0 <2.0.0"

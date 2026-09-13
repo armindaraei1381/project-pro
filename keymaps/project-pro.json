@@ -1,0 +1,8 @@
+{
+  "atom-workspace": {
+    "ctrl-alt-p": "project-pro:toggle",
+    "ctrl-alt-n": "project-pro:new-project",
+    "ctrl-alt-shift-a": "project-pro:add-current",
+    "ctrl-alt-shift-t": "project-pro:cycle-theme"
+  }
+}
