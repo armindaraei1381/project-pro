@@ -1,0 +1,262 @@
+{
+  "name": "project-pro",
+  "main": "./lib/main",
+  "version": "1.0.3",
+  "description": "A minimal glassmorphism project dashboard with themes, templates and rich settings for Pulsar",
+  "keywords": [
+    "projects",
+    "manager",
+    "dashboard",
+    "welcome",
+    "templates",
+    "themes",
+    "glassmorphism",
+    "productivity"
+  ],
+  "repository": "https://github.com/YOUR_USERNAME/project-pro",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "deserializers": {
+    "ProjectProView": "deserializeProjectProView"
+  },
+  "configSchema": {
+    "onLaunch": {
+      "order": 1,
+      "type": "string",
+      "default": "always",
+      "title": "Launch Behavior",
+      "description": "When should the dashboard open?",
+      "enum": [
+        {
+          "value": "always",
+          "description": "Always open on startup"
+        },
+        {
+          "value": "empty",
+          "description": "Only when no files are restored"
+        },
+        {
+          "value": "never",
+          "description": "Never open automatically"
+        }
+      ]
+    },
+    "autoTrack": {
+      "order": 2,
+      "type": "boolean",
+      "default": true,
+      "title": "Auto-track opened folders",
+      "description": "Add every folder you open to the dashboard."
+    },
+    "openInNewWindow": {
+      "order": 3,
+      "type": "boolean",
+      "default": true,
+      "title": "Open projects in a new window"
+    },
+    "openAfterCreate": {
+      "order": 4,
+      "type": "boolean",
+      "default": true,
+      "title": "Open project after creating from template"
+    },
+    "sortBy": {
+      "order": 5,
+      "type": "string",
+      "default": "recent",
+      "title": "Sort projects by",
+      "enum": [
+        {
+          "value": "recent",
+          "description": "Recently opened"
+        },
+        {
+          "value": "name",
+          "description": "Name (A-Z)"
+        },
+        {
+          "value": "opened",
+          "description": "Most opened"
+        }
+      ]
+    },
+    "confirmRemoval": {
+      "order": 6,
+      "type": "boolean",
+      "default": true,
+      "title": "Ask before removing a project from the list"
+    },
+    "theme": {
+      "order": 10,
+      "type": "string",
+      "default": "aurora",
+      "title": "Theme",
+      "enum": [
+        {
+          "value": "aurora",
+          "description": "Aurora (colorful glass)"
+        },
+        {
+          "value": "match-editor",
+          "description": "Match Pulsar theme"
+        },
+        {
+          "value": "midnight",
+          "description": "Midnight"
+        },
+        {
+          "value": "daylight",
+          "description": "Daylight"
+        },
+        {
+          "value": "mono",
+          "description": "Mono (no colors)"
+        },
+        {
+          "value": "custom",
+          "description": "Custom accent"
+        }
+      ]
+    },
+    "customAccent": {
+      "order": 11,
+      "type": "color",
+      "default": "#7c6cff",
+      "title": "Custom accent color",
+      "description": "Used when theme is Custom."
+    },
+    "blurIntensity": {
+      "order": 12,
+      "type": "string",
+      "default": "medium",
+      "title": "Blur intensity",
+      "enum": [
+        {
+          "value": "off",
+          "description": "Off"
+        },
+        {
+          "value": "low",
+          "description": "Low"
+        },
+        {
+          "value": "medium",
+          "description": "Medium"
+        },
+        {
+          "value": "high",
+          "description": "High"
+        }
+      ]
+    },
+    "ambientGlow": {
+      "order": 13,
+      "type": "integer",
+      "default": 50,
+      "minimum": 0,
+      "maximum": 100,
+      "title": "Ambient glow",
+      "description": "Background color blobs intensity (0-100)."
+    },
+    "coloredCards": {
+      "order": 14,
+      "type": "boolean",
+      "default": true,
+      "title": "Colored cards"
+    },
+    "showPaths": {
+      "order": 15,
+      "type": "boolean",
+      "default": true,
+      "title": "Show project paths"
+    },
+    "showStats": {
+      "order": 16,
+      "type": "boolean",
+      "default": true,
+      "title": "Show open stats"
+    },
+    "showThemeSwatches": {
+      "order": 17,
+      "type": "boolean",
+      "default": true,
+      "title": "Show theme swatches in header"
+    },
+    "animations": {
+      "order": 18,
+      "type": "boolean",
+      "default": true,
+      "title": "Card animations"
+    },
+    "cardWidth": {
+      "order": 19,
+      "type": "integer",
+      "default": 280,
+      "minimum": 220,
+      "maximum": 420,
+      "step": 10,
+      "title": "Card width",
+      "description": "Minimum card width in px."
+    },
+    "cornerRadius": {
+      "order": 20,
+      "type": "integer",
+      "default": 18,
+      "minimum": 0,
+      "maximum": 28,
+      "title": "Corner radius",
+      "description": "Rounded corners of panels (px)."
+    },
+    "fontFamily": {
+      "order": 30,
+      "type": "string",
+      "default": "",
+      "title": "Font family",
+      "description": "CSS font stack, e.g. 'Vazirmatn', 'Fira Sans', sans-serif. Empty = inherit Pulsar UI font."
+    },
+    "fontSize": {
+      "order": 31,
+      "type": "integer",
+      "default": 14,
+      "minimum": 11,
+      "maximum": 18,
+      "title": "Font size",
+      "description": "Base font size (px)."
+    },
+    "titleFontWeight": {
+      "order": 32,
+      "type": "string",
+      "default": "600",
+      "title": "Title font weight",
+      "enum": [
+        {
+          "value": "300",
+          "description": "Light"
+        },
+        {
+          "value": "400",
+          "description": "Regular"
+        },
+        {
+          "value": "500",
+          "description": "Medium"
+        },
+        {
+          "value": "600",
+          "description": "SemiBold"
+        },
+        {
+          "value": "700",
+          "description": "Bold"
+        },
+        {
+          "value": "800",
+          "description": "ExtraBold"
+        }
+      ]
+    }
+  }
+}
